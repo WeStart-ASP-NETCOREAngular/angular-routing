@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { IPost } from 'src/app/interfaces/IPost';
 import { PostsService } from 'src/app/services/posts.service';
 
@@ -9,10 +10,16 @@ import { PostsService } from 'src/app/services/posts.service';
 })
 export class PostDetailsComponent implements OnInit {
   post!: IPost;
-  constructor(private postService: PostsService) {}
+  constructor(
+    private postService: PostsService,
+    private route: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
-    this.post = this.postService.getPost(1);
+    this.route.paramMap.subscribe((params) => {
+      let postId = +params.get('postId')!;
+      this.post = this.postService.getPost(postId);
+    });
   }
 
   onNavigateToUser(id: number) {}
