@@ -8,6 +8,8 @@
               <a
                 class="fw-bold p-3 d-block border-start border-end active"
                 [routerLink]="['/']"
+                routerLinkActive="active"
+                [routerLinkActiveOptions]="{ exact: true }"
                 >Home</a
               >
             </li>
@@ -15,6 +17,7 @@
               <a
                 class="fw-bold p-3 d-block border-end"
                 [routerLink]="['/users']"
+                routerLinkActive="active"
                 >Users</a
               >
             </li>
@@ -22,6 +25,7 @@
               <a
                 class="fw-bold p-3 d-block border-end"
                 [routerLink]="['/posts']"
+                routerLinkActive="active"
                 >Posts</a
               >
             </li>
