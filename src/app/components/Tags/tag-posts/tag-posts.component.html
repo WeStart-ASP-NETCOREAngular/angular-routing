@@ -1,0 +1,5 @@
+<ul class="list-group">
+  <li class="list-group-item" *ngFor="let post of tagPosts">
+    <a [routerLink]="['/posts', post.id]">{{ post.title }}</a>
+  </li>
+</ul>

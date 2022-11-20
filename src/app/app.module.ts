@@ -9,14 +9,18 @@ import { PostDetailsComponent } from './components/Posts/post-details/post-detai
 import { HomeComponent } from './components/home/home.component';
 import { RouterModule, Routes } from '@angular/router';
 import { TagsComponent } from './components/Tags/tags/tags.component';
-
+import { TagPostsComponent } from './components/Tags/tag-posts/tag-posts.component';
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'users', component: UsersListComponent },
   { path: 'users/:userId', component: UserProfileComponent },
   { path: 'posts', component: PostListComponent },
   { path: 'posts/:postId', component: PostDetailsComponent },
-  { path: 'tags', component: TagsComponent },
+  {
+    path: 'tags',
+    component: TagsComponent,
+    children: [{ path: ':tagName', component: TagPostsComponent }],
+  },
 ];
 
 @NgModule({
@@ -28,6 +32,7 @@ const appRoutes: Routes = [
     PostDetailsComponent,
     HomeComponent,
     TagsComponent,
+    TagPostsComponent,
   ],
   imports: [BrowserModule, RouterModule.forRoot(appRoutes)],
   providers: [],

@@ -3,12 +3,14 @@
     <div class="col-md-3">
       <ul class="list-group">
         <li class="list-group-item" *ngFor="let tag of tags">
-          <a href="#">
+          <a [routerLink]="['/tags', tag]">
             {{ tag }}
           </a>
         </li>
       </ul>
     </div>
-    <div class="col-md-9">Tag Posts List</div>
+    <div class="col-md-9">
+      <router-outlet></router-outlet>
+    </div>
   </div>
 </div>
