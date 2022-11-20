@@ -7,15 +7,23 @@
             <li>
               <a
                 class="fw-bold p-3 d-block border-start border-end active"
-                href="#"
+                [routerLink]="['/']"
                 >Home</a
               >
             </li>
             <li>
-              <a class="fw-bold p-3 d-block border-end" href="#">Users</a>
+              <a
+                class="fw-bold p-3 d-block border-end"
+                [routerLink]="['/users']"
+                >Users</a
+              >
             </li>
             <li>
-              <a class="fw-bold p-3 d-block border-end" href="#">Posts</a>
+              <a
+                class="fw-bold p-3 d-block border-end"
+                [routerLink]="['/posts']"
+                >Posts</a
+              >
             </li>
           </ul>
         </div>
