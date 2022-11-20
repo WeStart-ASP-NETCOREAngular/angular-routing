@@ -10,6 +10,8 @@ import { HomeComponent } from './components/home/home.component';
 import { RouterModule, Routes } from '@angular/router';
 import { TagsComponent } from './components/Tags/tags/tags.component';
 import { TagPostsComponent } from './components/Tags/tag-posts/tag-posts.component';
+import { AboutComponent } from './components/about/about/about.component';
+import { AuthGuard } from './auth/auth.guard';
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'users', component: UsersListComponent },
@@ -21,6 +23,7 @@ const appRoutes: Routes = [
     component: TagsComponent,
     children: [{ path: ':tagName', component: TagPostsComponent }],
   },
+  { path: 'about', component: AboutComponent, canActivate: [AuthGuard] },
 ];
 
 @NgModule({
@@ -33,6 +36,7 @@ const appRoutes: Routes = [
     HomeComponent,
     TagsComponent,
     TagPostsComponent,
+    AboutComponent,
   ],
   imports: [BrowserModule, RouterModule.forRoot(appRoutes)],
   providers: [],
