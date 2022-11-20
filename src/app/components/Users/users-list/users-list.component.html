@@ -7,7 +7,10 @@
           <div class="d-flex align-items-center">
             <img class="img-thumbnail" [src]="user.image" alt="" />
             <div class="ms-2">
-              <a href="#" class="text-dark fw-bold d-block">
+              <a
+                [routerLink]="['/users', user.id]"
+                class="text-dark fw-bold d-block"
+              >
                 {{ user.firstName }} {{ user.lastName }}
               </a>
               <small>Age : {{ user.age }}</small>
