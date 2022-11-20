@@ -21,6 +21,7 @@ const appRoutes: Routes = [
   {
     path: 'tags',
     component: TagsComponent,
+    canActivateChild: [AuthGuard],
     children: [{ path: ':tagName', component: TagPostsComponent }],
   },
   { path: 'about', component: AboutComponent, canActivate: [AuthGuard] },
