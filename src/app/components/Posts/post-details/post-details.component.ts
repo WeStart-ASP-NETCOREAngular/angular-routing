@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { IPost } from 'src/app/interfaces/IPost';
 import { PostsService } from 'src/app/services/posts.service';
 
@@ -12,7 +12,8 @@ export class PostDetailsComponent implements OnInit {
   post!: IPost;
   constructor(
     private postService: PostsService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -22,5 +23,7 @@ export class PostDetailsComponent implements OnInit {
     });
   }
 
-  onNavigateToUser(id: number) {}
+  onNavigateToUser(userId: number) {
+    this.router.navigate(['/users', userId]);
+  }
 }
