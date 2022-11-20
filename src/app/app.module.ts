@@ -7,6 +7,13 @@ import { UserProfileComponent } from './components/Users/user-profile/user-profi
 import { PostListComponent } from './components/Posts/post-list/post-list.component';
 import { PostDetailsComponent } from './components/Posts/post-details/post-details.component';
 import { HomeComponent } from './components/home/home.component';
+import { RouterModule, Routes } from '@angular/router';
+
+const appRoutes: Routes = [
+  { path: '', component: HomeComponent },
+  { path: 'users', component: UsersListComponent },
+  { path: 'posts', component: PostListComponent },
+];
 
 @NgModule({
   declarations: [
@@ -17,7 +24,7 @@ import { HomeComponent } from './components/home/home.component';
     PostDetailsComponent,
     HomeComponent,
   ],
-  imports: [BrowserModule],
+  imports: [BrowserModule, RouterModule.forRoot(appRoutes)],
   providers: [],
   bootstrap: [AppComponent],
 })
