@@ -10,4 +10,11 @@ export class AuthService {
   get getIsAuthenticated(): boolean {
     return this.isLogged;
   }
+
+  userLogin() {
+    this.isLogged = true;
+  }
+  userLogout() {
+    this.isLogged = false;
+  }
 }

@@ -2,7 +2,9 @@
   <div class="container">
     <div class="row">
       <div class="col-md-12">
-        <div class="my-2 border rounded bg-light px-5">
+        <div
+          class="my-2 border rounded bg-light px-5 d-flex justify-content-between"
+        >
           <ul class="list-group flex flex-row">
             <li>
               <a
@@ -44,6 +46,24 @@
                 routerLinkActive="active"
                 >About</a
               >
+            </li>
+          </ul>
+          <ul class="list-group flex flex-row">
+            <li>
+              <button
+                class="btn btn-primary fw-bold p-3 d-block border-start border-end"
+                (click)="onLogin()"
+              >
+                Login
+              </button>
+            </li>
+            <li>
+              <a
+                class="btn btn-secondary fw-bold p-3 d-block border-end"
+                (click)="onLogout()"
+              >
+                Logout
+              </a>
             </li>
           </ul>
         </div>

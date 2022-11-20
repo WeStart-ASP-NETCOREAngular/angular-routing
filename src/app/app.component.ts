@@ -1,10 +1,20 @@
 import { Component } from '@angular/core';
+import { AuthService } from './services/auth/auth.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title = 'RoutingHelloWorld';
+  constructor(private authService: AuthService) {}
+  title = 'Routing Hello World';
+  
+  //Fake logining
+  onLogin() {
+    this.authService.userLogin();
+  }
+  onLogout() {
+    this.authService.userLogout();
+  }
 }
